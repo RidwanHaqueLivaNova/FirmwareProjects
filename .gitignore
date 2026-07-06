@@ -1,0 +1,31 @@
+# IAR build/output folders
+Debug/
+Release/
+Output/
+Obj/
+Exe/
+List/
+
+# IAR generated build files
+*.d43
+*.r43
+*.map
+*.lst
+*.out
+*.hex
+*.srec
+*.sim
+*.dep
+*.pbi
+*.xcl
+*.browse
+
+# IAR workspace/user temporary files
+*.wsdt
+*.ewt
+*.custom_argvars
+
+# Windows/editor files
+Thumbs.db
+.DS_Store
+.vscode/

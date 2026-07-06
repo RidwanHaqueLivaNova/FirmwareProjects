@@ -1,0 +1,20 @@
+dcoctl = 0x60 = 0110 0000
+
+7-5 dcox = 3 dco frequency select based on rselx
+4-0 modx = 0
+
+bcsctl1 = 0x87 = 1000 0111
+
+7 - xt2off
+
+3-0 rselx = 0000 0111
+
+
+bcsctl2 = 0x00 = 0000 0000
+
+0 = dcor = resistor select
+
+bcsctl3 = 0x05 = 0000 0101
+
+rsel mask = 0000 0111
+
