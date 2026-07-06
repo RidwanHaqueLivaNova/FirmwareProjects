@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\uart_buzzer_command\uart_buzzer_command.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\uart_echo_test\uart_echo_test.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
