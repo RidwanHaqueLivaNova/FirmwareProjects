@@ -48,6 +48,9 @@
         <Freq>1000000</Freq>
         <FreqHi>0</FreqHi>
     </Simulator>
+    <DebugChecksum>
+        <Checksum>3097502149</Checksum>
+    </DebugChecksum>
     <EEM_State_Storage>
         <Buffer>010000000000000000000000</Buffer>
     </EEM_State_Storage>
@@ -60,9 +63,6 @@
     <EEM_Cycle_Counter_1>
         <Counter1>0000000000000000000000000000000000000000000000000000000000000000</Counter1>
     </EEM_Cycle_Counter_1>
-    <DebugChecksum>
-        <Checksum>2453506375</Checksum>
-    </DebugChecksum>
     <CallStack>
         <ShowArgs>0</ShowArgs>
     </CallStack>
@@ -73,11 +73,6 @@
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
     </TermIOLog>
-    <LogFile>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-        <Category>_ 0</Category>
-    </LogFile>
     <Breakpoints>
         <Count>0</Count>
     </Breakpoints>
@@ -103,6 +98,11 @@
         <all_registers>0</all_registers>
         <File_name />
     </Memory_Dump>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
     <Aliases>
         <Count>0</Count>
         <SuppressDialog>0</SuppressDialog>
