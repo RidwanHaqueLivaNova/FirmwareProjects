@@ -101,6 +101,12 @@ static void process_command(unsigned char command)
 
         logging_log_event(LOG_EVENT_BEEP_OFF);
     }
+    
+    else if ((command == 'd') || (command == 'D'))
+    {
+        logging_dump_events();
+    }
+
     else if ((command == '\r') || (command == '\n'))
     {
         // Ignore Enter/newline characters.
@@ -109,6 +115,7 @@ static void process_command(unsigned char command)
     {
         uart_send_string("UNKNOWN COMMAND\r\n");
     }
+
 }
 
 #pragma vector=USCIAB1RX_VECTOR

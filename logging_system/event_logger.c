@@ -179,6 +179,32 @@ static void logging_print_event(unsigned long address)
     uart_send_string("\r\n");
 }
 
+void logging_dump_events(void) 
+{
+
+    unsigned long address;
+
+    uart_send_string("LOG DUMP START\r\n");
+
+    if (log_next_address == LOG_START_ADDRESS)
+    {
+        uart_send_string("NO LOG ENTRIES\r\n");
+    }
+    else
+    {
+        address = LOG_START_ADDRESS;
+
+        while (address < log_next_address)
+        {
+            logging_print_event(address);
+            address += LOG_ENTRY_SIZE;
+        }
+    }
+
+    uart_send_string("LOG DUMP DONE\r\n");
+
+}
+
 void event_logger_test_run(void)
 {
     unsigned char verify_1;
