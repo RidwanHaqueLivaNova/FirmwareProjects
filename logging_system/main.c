@@ -2,20 +2,24 @@
 
 #include "io430.h"
 
-void hardware_init(void);
-void uart_send_string(const char s[]);
-void fram_memory_test_run(void);
-void event_logger_test_run(void);
+//void hardware_init(void);
+//void uart_send_string(const char s[]);
+//void fram_memory_test_run(void);
+//void event_logger_test_run(void);
+void command_app_run(void);
 
 int main(void)
 {
-    hardware_init();
+    //hardware_init();
 
-    uart_send_string("RDY\r\n");
+    //uart_send_string("RDY\r\n");
 
-    fram_memory_test_run();
-
-    event_logger_test_run();
+    
+    // reference tests
+    // fram_memory_test_run();
+    // event_logger_test_run();
+    
+    command_app_run();
 
     while (1)
     {

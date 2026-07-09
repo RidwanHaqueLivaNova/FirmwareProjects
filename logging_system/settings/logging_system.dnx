@@ -49,7 +49,7 @@
         <FreqHi>0</FreqHi>
     </Simulator>
     <DebugChecksum>
-        <Checksum>3097502149</Checksum>
+        <Checksum>1053265489</Checksum>
     </DebugChecksum>
     <EEM_State_Storage>
         <Buffer>010000000000000000000000</Buffer>
@@ -69,10 +69,6 @@
     <Disassembly>
         <MixedMode>1</MixedMode>
     </Disassembly>
-    <TermIOLog>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-    </TermIOLog>
     <Breakpoints>
         <Count>0</Count>
     </Breakpoints>
@@ -98,6 +94,10 @@
         <all_registers>0</all_registers>
         <File_name />
     </Memory_Dump>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
     <LogFile>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>

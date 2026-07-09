@@ -1,6 +1,7 @@
 // SIMPLE FRAM EVENT LOGGER TEST
 
 #include "io430.h"
+#include "event_logger.h"
 
 #define LOG_START_ADDRESS   0x000200UL
 #define LOG_ENTRY_SIZE      8
@@ -8,6 +9,9 @@
 #define LOG_MARKER          0xA5
 #define LOG_EVENT_TEST_1    0x11
 #define LOG_EVENT_TEST_2    0x22
+
+
+
 
 void uart_send_string(const char s[]);
 void uart_send_hex_byte(unsigned char value);
@@ -38,6 +42,11 @@ static unsigned char log_calculate_checksum(unsigned char marker,
 
     return checksum;
 }
+
+
+
+
+
 
 static void logging_write_event(unsigned char event_id)
 {
@@ -78,6 +87,20 @@ static void logging_write_event(unsigned char event_id)
     log_sequence++;
     log_next_address += LOG_ENTRY_SIZE;
 }
+
+
+void logging_log_event(unsigned char event_id)
+{
+  logging_write_event(event_id);
+  uart_send_string("EVENT LOGGED: ");
+  uart_send_hex_byte(event_id);
+  uart_send_string("\r\n");
+  
+}
+
+
+
+
 
 static unsigned char logging_verify_event(unsigned long address,
                                           unsigned char expected_event_id)

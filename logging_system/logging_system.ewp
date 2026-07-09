@@ -2298,7 +2298,13 @@
         </settings>
     </configuration>
     <file>
+        <name>$PROJ_DIR$\command_app.c</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\event_logger.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\event_logger.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\fram_driver.c</name>
