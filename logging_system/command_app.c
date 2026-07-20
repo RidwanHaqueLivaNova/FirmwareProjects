@@ -107,6 +107,11 @@ static void process_command(unsigned char command)
         logging_dump_events();
     }
 
+    else if ((command == 'c') || (command == 'C'))
+    {
+        logging_clear();
+    }
+
     else if ((command == '\r') || (command == '\n'))
     {
         // Ignore Enter/newline characters.
@@ -173,6 +178,7 @@ void command_app_run(void)
     hardware_init();
     buzzer_init();
     timer_init();
+    logging_init();
 
     // Enable UCA1 receive interrupt.
     UC1IE |= UCA1RXIE;

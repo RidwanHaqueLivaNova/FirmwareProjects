@@ -44,7 +44,58 @@ static unsigned char log_calculate_checksum(unsigned char marker,
 }
 
 
+void logging_init(void)
+{
+    unsigned long address;
+    unsigned char marker;
+    unsigned char event_id;
+    unsigned char sequence_low;
+    unsigned char sequence_high;
+    unsigned char data0;
+    unsigned char data1;
+    unsigned char data2;
+    unsigned char stored_checksum;
+    unsigned char calculated_checksum;
 
+    address = LOG_START_ADDRESS;
+    log_sequence = 0;
+
+    while (1)
+    {
+        marker = fram_read_byte(address + 0);
+
+        if (marker != LOG_MARKER)
+        {
+            break;
+        }
+
+        event_id = fram_read_byte(address + 1);
+        sequence_low = fram_read_byte(address + 2);
+        sequence_high = fram_read_byte(address + 3);
+        data0 = fram_read_byte(address + 4);
+        data1 = fram_read_byte(address + 5);
+        data2 = fram_read_byte(address + 6);
+        stored_checksum = fram_read_byte(address + 7);
+
+        calculated_checksum = log_calculate_checksum(marker,
+                                                     event_id,
+                                                     sequence_low,
+                                                     sequence_high,
+                                                     data0,
+                                                     data1,
+                                                     data2);
+
+        if (stored_checksum != calculated_checksum)
+        {
+            break;
+        }
+
+        log_sequence++;
+        address += LOG_ENTRY_SIZE;
+    }
+
+    log_next_address = address;
+}
 
 
 
@@ -99,7 +150,13 @@ void logging_log_event(unsigned char event_id)
 }
 
 
+void logging_clear(void)
+{
+    log_sequence = 0;
+    log_next_address = LOG_START_ADDRESS;
 
+    uart_send_string("LOG CLEARED\r\n");
+}
 
 
 static unsigned char logging_verify_event(unsigned long address,
